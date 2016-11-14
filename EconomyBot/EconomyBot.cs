@@ -9,13 +9,9 @@ namespace EconomyBot
 {
     class MyBot
     {
-
-
         Dictionary<String, double> userEcon = new Dictionary<String, double>();
 
-        public Boolean Taken = false;
-       
-
+        public Boolean Taken = false;       
        
         String Args;
         Random random = new Random();
@@ -25,8 +21,6 @@ namespace EconomyBot
         DiscordClient discord;
         public MyBot()
         {
-            
-            userEcon.Add("Server", 1000000.0);
             userEcon.Add("server", 1000000.0);
             discord = new DiscordClient(x =>
             {
@@ -50,9 +44,9 @@ namespace EconomyBot
                 {
 
                     if (Int32.Parse(e.GetArg("Amount")) < userEcon[e.User.Name]) {
-                        Amount = userEcon[e.User.Name] -= Int32.Parse(e.GetArg("Amount"));
-                        userEcon.Remove(e.User.Name);
-                        userEcon.Add(e.User.Name, Amount);
+                        Amount = userEcon[e.User.Name.ToLowercase()] -= Int32.Parse(e.GetArg("Amount"));
+                        userEcon.Remove(e.User.Name.ToLowercase());
+                        userEcon.Add(e.User.Name.ToLowercase(), Amount);
                         await e.Channel.SendMessage("User " + e.User.Name + " Has bet " + e.GetArg("Amount") + " Virginities on the number " + e.GetArg("onWho"));
                         int randomNumber = random.Next(1, 7);
 
@@ -61,15 +55,15 @@ namespace EconomyBot
                         if (Int32.Parse(e.GetArg("onWho")) == randomNumber)
                         {
                             await e.Channel.SendMessage(e.User.Name + " has won " + (Int32.Parse(e.GetArg("Amount")) * 2));
-                            Amount = userEcon[e.User.Name] += (Int32.Parse(e.GetArg("Amount")) * 2);
-                            userEcon.Remove(e.User.Name);
-                            userEcon.Add(e.User.Name, Amount);
+                            Amount = userEcon[e.User.Name.ToLowercase()] += (Int32.Parse(e.GetArg("Amount")) * 2);
+                            userEcon.Remove(e.User.Name.ToLowercase());
+                            userEcon.Add(e.User.Name.ToLowercase(), Amount);
                         } else
                         {
                             await e.Channel.SendMessage("The die has rolled a " + randomNumber + " " + e.User.Name + " Has Lost " + Int32.Parse(e.GetArg("Amount")));
-                            Amount = userEcon[e.User.Name] -= Int32.Parse(e.GetArg("Amount"));
-                            userEcon.Remove(e.User.Name);
-                            userEcon.Add(e.User.Name, Amount);
+                            Amount = userEcon[e.User.Name.ToLowercase()] -= Int32.Parse(e.GetArg("Amount"));
+                            userEcon.Remove(e.User.Name.ToLowercase());
+                            userEcon.Add(e.User.Name.ToLowercase(), Amount);
                         }
 
                     }
