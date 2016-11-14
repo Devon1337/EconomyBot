@@ -19,8 +19,8 @@ namespace EconomyBot
        
         String Args;
         Random random = new Random();
-        double Amount;
-        double Amount2;
+        int Amount;
+        int Amount2;
 
         DiscordClient discord;
         public MyBot()
@@ -49,12 +49,12 @@ namespace EconomyBot
                 .Do(async (e) =>
                 {
 
-                    if (Int32.Parse(e.GetArg("Amount")) > userEcon[e.User.Name]) {
+                    if (Int32.Parse(e.GetArg("Amount")) < userEcon[e.User.Name]) {
                         Amount = userEcon[e.User.Name] -= Int32.Parse(e.GetArg("Amount"));
                         userEcon.Remove(e.User.Name);
                         userEcon.Add(e.User.Name, Amount);
                         await e.Channel.SendMessage("User " + e.User.Name + " Has bet " + e.GetArg("Amount") + " Virginities on the number " + e.GetArg("onWho"));
-                        int randomNumber = random.Next(0, 6);
+                        int randomNumber = random.Next(1, 7);
 
 
 
