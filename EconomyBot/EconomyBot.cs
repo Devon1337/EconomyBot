@@ -48,27 +48,31 @@ namespace EconomyBot
                 .Parameter("onWho", ParameterType.Required)
                 .Do(async (e) =>
                 {
-                    
-                        await e.Channel.SendMessage("User " + e.User.Name + " Has bet " + e.GetArg("Amount") + " Virginities on the number " + e.GetArg("onWho"));
-                        int randomNumber = random.Next(0, 6);
-                    
-                        
 
-                        if(Int32.Parse(e.GetArg("onWho")) == randomNumber)
-                        {
-                            await e.Channel.SendMessage(e.User.Name + " has won " + (Int32.Parse(e.GetArg("Amount"))*2));
-                            Amount = userEcon[e.User.Name] += (Int32.Parse(e.GetArg("Amount")) * 2);
-                            userEcon.Remove(e.User.Name);
-                            userEcon.Add(e.User.Name, Amount);
-                    } else
-                    {
-                        await e.Channel.SendMessage("The die has rolled a " + randomNumber + " " + e.User.Name + " Has Lost " + Int32.Parse(e.GetArg("Amount")));
+                    if (Int32.Parse(e.GetArg("Amount")) > userEcon[e.User.Name]) {
                         Amount = userEcon[e.User.Name] -= Int32.Parse(e.GetArg("Amount"));
                         userEcon.Remove(e.User.Name);
                         userEcon.Add(e.User.Name, Amount);
-                    }
-                    
+                        await e.Channel.SendMessage("User " + e.User.Name + " Has bet " + e.GetArg("Amount") + " Virginities on the number " + e.GetArg("onWho"));
+                        int randomNumber = random.Next(0, 6);
 
+
+
+                        if (Int32.Parse(e.GetArg("onWho")) == randomNumber)
+                        {
+                            await e.Channel.SendMessage(e.User.Name + " has won " + (Int32.Parse(e.GetArg("Amount")) * 2));
+                            Amount = userEcon[e.User.Name] += (Int32.Parse(e.GetArg("Amount")) * 2);
+                            userEcon.Remove(e.User.Name);
+                            userEcon.Add(e.User.Name, Amount);
+                        } else
+                        {
+                            await e.Channel.SendMessage("The die has rolled a " + randomNumber + " " + e.User.Name + " Has Lost " + Int32.Parse(e.GetArg("Amount")));
+                            Amount = userEcon[e.User.Name] -= Int32.Parse(e.GetArg("Amount"));
+                            userEcon.Remove(e.User.Name);
+                            userEcon.Add(e.User.Name, Amount);
+                        }
+
+                    }
                 });
 
           
