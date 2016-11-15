@@ -1,4 +1,4 @@
-##### Note: this is just the start of a project.  There is not program ready for release.  All the code is basically 1.0 
+##### Note: this is just the start of a project.  There is not a program ready for release.  All the code is basically 1.0 
 
 # EconomyBot
 
