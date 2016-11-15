@@ -1,5 +1,7 @@
 ##### Note: this is just the start of a project.  There is not a program ready for release.  All the code is basically 1.0 
 
+## I do not recommend downloading due to its inability to start fully yet.  Most of the starting code is compiled differently.  I will have a download link when it is ready. 
+
 # EconomyBot
 
 - Stupid Discord Bot
