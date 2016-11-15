@@ -1,3 +1,5 @@
+##### Note: this is just the start of a project.  There is not program ready for release.  All the code is basically 1.0 
+
 # EconomyBot
 
 - Stupid Discord Bot
