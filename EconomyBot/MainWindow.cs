@@ -7,7 +7,6 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-
 using System.IO;
 
 namespace TestForm
@@ -55,12 +54,12 @@ namespace TestForm
         {
             String wording;
             string Filename = @"C:\test\doc.txt";
-            MessageBox.Show("Hello World");
+            MessageBox.Show("Running");
             //button1.Visible = boolean
             //textBox1.Text = DateTime.Now.ToString();
             wording = textBox1.Text;
             WriteFile(Filename, wording);
-            
+            MyBot();
 
         }
     }
