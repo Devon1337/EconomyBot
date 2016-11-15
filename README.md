@@ -13,7 +13,7 @@
 
 ## List of todos
 
-- ~~ Finish the damn thing ~~
+- ~~Finish the damn thing~~
 - Setup Windows Form application
 - Store All the bot data to a file
 - Add extensibility to the bot
