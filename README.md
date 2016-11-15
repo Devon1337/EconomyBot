@@ -13,8 +13,15 @@
 
 ## List of todos
 
-- Finish the damn thing
+- ~~ Finish the damn thing ~~
 - Setup Windows Form application
 - Store All the bot data to a file
 - Add extensibility to the bot
 - Add cross os support
+- Add CSV file or something relative to do bank storage
+
+# Update Notice
+## Update 1.0 (Base Model)
+- Console Application
+- No UI or Expandability
+- Has no mass bank storage.
