@@ -18,7 +18,7 @@
 ## List of todos
 
 - ~~Finish the base model~~
-- Setup Windows Form application
+- ~~Setup Windows Form application~~ (Coming 1.1a)
 - Store All the bot data to a file
 - Add extensibility to the bot
 - Add cross os support
