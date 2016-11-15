@@ -17,13 +17,15 @@
 
 ## List of todos
 
-- ~~Finish the damn thing~~
+- ~~Finish the base model~~
 - Setup Windows Form application
 - Store All the bot data to a file
 - Add extensibility to the bot
 - Add cross os support
 - Add CSV file or something relative to do bank storage
 - turn int32 into int64 or int long
+- remove the dictionary instead for file name.
+- maybe not confirmed maybe setup all the data to online and link the usernames to a Unique ID
 
 # Update Notice
 ## Update 1.0 (Base Model)
