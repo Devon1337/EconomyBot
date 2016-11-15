@@ -4,7 +4,7 @@
 
 # EconomyBot
 
-- Stupid Discord Bot
+- Discord Bot
 - Uses C#
 - Really Basic for the Eco
 
