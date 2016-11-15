@@ -19,6 +19,7 @@
 - Add extensibility to the bot
 - Add cross os support
 - Add CSV file or something relative to do bank storage
+- turn int32 into int64 or int long
 
 # Update Notice
 ## Update 1.0 (Base Model)
