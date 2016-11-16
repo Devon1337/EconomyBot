@@ -28,10 +28,8 @@
 - maybe not confirmed maybe setup all the data to online and link the usernames to a Unique ID
 
 # Update Notice
-## Update 1.0 (Base Model)
-- Console Application
-- No UI or Expandability
-- Has no mass bank storage.
+## Update 1.1a (Windows Form)
+- Added a window that will startup with the application
 
 #Bugs
 - ~~Will not shutdown with regular methods~~ (Fixed in update 1.1 b)
