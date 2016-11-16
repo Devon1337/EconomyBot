@@ -34,4 +34,4 @@
 - Has no mass bank storage.
 
 #Bugs
-- Will not shutdown with regular methods
+- ~~Will not shutdown with regular methods~~ (Fixed in update 1.1 b)
