@@ -32,3 +32,6 @@
 - Console Application
 - No UI or Expandability
 - Has no mass bank storage.
+
+#Bugs
+- Will not shutdown with regular methods
