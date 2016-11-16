@@ -7,16 +7,20 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+
 using System.IO;
+
 
 namespace TestForm
 {
     public partial class Form1 : Form
     {
+        //EconomyBot.MyBot my = new EconomyBot.MyBot();
+
         public Form1()
         {
             
-        
+            
             InitializeComponent();
         }
 
@@ -54,12 +58,14 @@ namespace TestForm
         {
             String wording;
             string Filename = @"C:\test\doc.txt";
-            MessageBox.Show("Running");
+            MessageBox.Show("Hello World");
             //button1.Visible = boolean
             //textBox1.Text = DateTime.Now.ToString();
             wording = textBox1.Text;
             WriteFile(Filename, wording);
-            MyBot();
+
+            EconomyBot.MyBot bot = new EconomyBot.MyBot();
+
 
         }
     }
