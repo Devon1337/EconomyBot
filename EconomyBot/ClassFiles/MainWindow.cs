@@ -1,3 +1,6 @@
+/// Author: Devon
+/// Version: 1.1b
+
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -65,16 +68,11 @@ namespace TestForm
             //textBox1.Text = DateTime.Now.ToString();
             wording = textBox1.Text; // Test for applying text to a text field
             WriteFile(Filename, wording); // Use for testing currently
-           
-
-
-            MyBot bot = new MyBot(); // Adds the use of the EconomyBot for the console application
-
-
+            MultiCode(); // Puts the process on another thread
         }
-        public async Tast<int> MultiCode() 
+        public async Task<int> MultiCode() 
         {
-        MyBot bot = new MyBot();
+        MyBot bot = new MyBot(); // Runs the application
         }
     }
 }
