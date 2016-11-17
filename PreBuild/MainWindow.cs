@@ -11,7 +11,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.IO;
-using EconomyBot;
+//using EconomyBot;
 
 
 namespace TestForm
@@ -70,9 +70,13 @@ namespace TestForm
             WriteFile(Filename, wording); // Use for testing currently
             MultiCode(); // Puts the process on another thread
         }
+        public void FileSetup(String TempString) 
+        {
+            textBox1.Text = TempString; // Getter/Setter
+        }
         public async Task<int> MultiCode() 
         {
-        MyBot bot = new MyBot(); // Runs the application
+        EconomyBot.MyBot bot = new EconomyBot.MyBot(); // Runs a hidden application behind the main application. (WILL CLOSE WITH MAIN APPLICATION)
         }
     }
 }
