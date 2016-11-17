@@ -33,3 +33,6 @@
 
 #Bugs
 - ~~Will not shutdown with regular methods~~ (Fixed in update 1.1 b)
+
+#Current Status of the Program
+![alt text] (https://travis-ci.org/Devon1337/EconomyBot.svg?branch=master "Linux Build")
