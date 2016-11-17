@@ -19,6 +19,9 @@ namespace TestForm
     public partial class Form1 : Form
     {
         
+        Boolean WriteFile1 = false;
+        Boolean WriteFile2 = false;
+        
         // Required when running a Windows Form Application
         public Form1()
         {  
@@ -27,22 +30,44 @@ namespace TestForm
 
         static void WriteFile(string Filename, string Message)
         {
-            FileStream fs = new FileStream(Filename, FileMode.Append, FileAccess.Write); // FileStream((String)FileName, FileMode.Type, FileAccess.Type)
+            FileStream fs1 = new FileStream(@"c:/doctype.txt", FileMode.Append, FileAccess.Write); // FileStream((String)FileName, FileMode.Type, FileAccess.Type)
+            FileStream fs2 = new FileStream(@"c:/server.txt", FileMode.Create, FileAccess.Write); // FileStream((String)FileName, FileMode.Type, FileAccess.Type)       
+            if(WriteFile1 == true && WriteFile2 == false) 
+            {     
+                if(fs.CanWrite)
+                {
+                    byte[] buffer = Encoding.ASCII.GetBytes(Message);
+                    byte[] newline = Encoding.ASCII.GetBytes(Environment.NewLine);
+                    fs.Write(buffer, 0, buffer.Length);
+                    fs.Write(newline, 0, newline.Length);
+                    // Writes string to a byte array converting to ASCII 
+                    // Allows the .txt to be able to read the array
 
-            if(fs.CanWrite)
-            {
-                byte[] buffer = Encoding.ASCII.GetBytes(Message);
-                byte[] newline = Encoding.ASCII.GetBytes(Environment.NewLine);
-                fs.Write(buffer, 0, buffer.Length);
-                fs.Write(newline, 0, newline.Length);
-                // Writes string to a byte array converting to ASCII 
-                // Allows the .txt to be able to read the array
+                }
 
+                fs.Flush();
+                fs.Close();
+                // Closes and cleans memory for use
+                WriteFile2
             }
+        }
+        if(WriteFile2 == true && WriteFile1 == false) 
+        {
+         if(fs.CanWrite)
+                {
+                    byte[] buffer = Encoding.ASCII.GetBytes(Message);
+                    byte[] newline = Encoding.ASCII.GetBytes(Environment.NewLine);
+                    fs.Write(buffer, 0, buffer.Length);
+                    fs.Write(newline, 0, newline.Length);
+                    // Writes string to a byte array converting to ASCII 
+                    // Allows the .txt to be able to read the array
 
-            fs.Flush();
-            fs.Close();
-            // Closes and cleans memory for use
+                }
+
+                fs.Flush();
+                fs.Close();
+                // Closes and cleans memory for use
+            }
         }
 
         static void ReadFile(string Filename)
