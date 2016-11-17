@@ -72,7 +72,7 @@ namespace TestForm
 
 
         }
-        pbulic async Tast<int> MultiCode() 
+        public async Tast<int> MultiCode() 
         {
         MyBot bot = new MyBot();
         }
