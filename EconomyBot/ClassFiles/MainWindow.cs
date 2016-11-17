@@ -66,12 +66,15 @@ namespace TestForm
             wording = textBox1.Text; // Test for applying text to a text field
             WriteFile(Filename, wording); // Use for testing currently
            
-            // Going to run the code async
-            .Do(async(e) =>
-            {
-            await MyBot bot = new MyBot(); // Adds the use of the EconomyBot for the console application
-            )};
 
+
+            MyBot bot = new MyBot(); // Adds the use of the EconomyBot for the console application
+
+
+        }
+        pbulic async Tast<int> MultiCode() 
+        {
+        MyBot bot = new MyBot();
         }
     }
 }
