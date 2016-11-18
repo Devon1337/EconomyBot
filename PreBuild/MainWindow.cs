@@ -28,9 +28,9 @@ namespace TestForm
         
         // used to setup file location to system architecture 
         if(is64bit) {
-           Dim Path as String = "c:/ProgramFiles(x86)/EconomyBot/"
+           Dim Path as String = "c:/ProgramFiles(x86)/EconomyBot/";
         }else {
-           Dim Path as String = "c:/ProgramFiles/EconomyBot"
+           Dim Path as String = "c:/ProgramFiles/EconomyBot";
         }
 
 
@@ -60,10 +60,10 @@ namespace TestForm
                 fs.Flush();
                 fs.Close();
                 // Closes and cleans memory for use
-                WriteFile2
+                WriteFile1 = false;
+                WriteFile2 = false;
             }
-        }
-        if(WriteFile2 == true && WriteFile1 == false) 
+        }else if(WriteFile2 == true && WriteFile1 == false) 
         {
          if(fs.CanWrite)
                 {
