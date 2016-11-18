@@ -22,7 +22,7 @@ namespace EconomyBot
         public MyBot()
         {
             userEcon.Add("server", 1000000);
-            userEcon.Add("thefreshfeline", 200000);
+            userEcon.Add("thefreshfeline", 200000); // You wanted it Devin
             discord = new DiscordClient(x =>
             {
                 x.LogLevel = LogSeverity.Info;
