@@ -11,6 +11,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.IO;
+using System.IO.Directory.CreateDirectory
 //using EconomyBot;
 
 
@@ -21,7 +22,18 @@ namespace TestForm
         
         Boolean WriteFile1 = false;
         Boolean WriteFile2 = false;
+
+        bool is64bit = !string.IsNullOrEmpty(
+           Environment.GetEnvironmentVariable("PROCESSOR_ARCHITEW6432"));
         
+        // used to setup file location to system architecture 
+        if(is64bit) {
+           Dim Path as String = "c:/ProgramFiles(x86)/EconomyBot/"
+        }else {
+           Dim Path as String = "c:/ProgramFiles/EconomyBot"
+        }
+
+
         // Required when running a Windows Form Application
         public Form1()
         {  
@@ -30,8 +42,8 @@ namespace TestForm
 
         static void WriteFile(string Filename, string Message)
         {
-            FileStream fs1 = new FileStream(@"c:/doctype.txt", FileMode.Append, FileAccess.Write); // FileStream((String)FileName, FileMode.Type, FileAccess.Type)
-            FileStream fs2 = new FileStream(@"c:/server.txt", FileMode.Create, FileAccess.Write); // FileStream((String)FileName, FileMode.Type, FileAccess.Type)       
+            FileStream fs1 = new FileStream(@Path+"/doctype.txt", FileMode.Append, FileAccess.Write); // FileStream((String)FileName, FileMode.Type, FileAccess.Type)
+            FileStream fs2 = new FileStream(@Path+"/server.txt", FileMode.Create, FileAccess.Write); // FileStream((String)FileName, FileMode.Type, FileAccess.Type)       
             if(WriteFile1 == true && WriteFile2 == false) 
             {     
                 if(fs.CanWrite)
