@@ -10,6 +10,29 @@ namespace EconomyBot
     class MyBot
     {
         Dictionary<String, int> userEcon = new Dictionary<String, int>();
+        
+        // Adding User Information Gathering
+        // Creates an Dictionary or HashMap Of Information going about either their name or what they like to do
+        // Laters gather information to check up users choice and things/games in play
+      
+        /* Test Script Area (Problem is based around the ID being SnowFlake Encrpyt)
+        Go around(Get initial User Info by having the user startup the bot)
+        
+        Have Secondary Bot or Script Run without use of ! or @ as a logger
+        
+        .createCommand("Hello")
+        .Do(async (e) => { 
+         Dictionary<String, String> e.User.Name = new Dictionary<String, String>();
+        });      
+        Overview Idea:
+        
+        Gunther#4534: Hey devon
+        Devon1337#2016: What?
+        
+       Devon1337;
+        
+        
+        */
 
         public Boolean Taken = false;
 
