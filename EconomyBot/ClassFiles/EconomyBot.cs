@@ -226,7 +226,7 @@ namespace EconomyBot
 
             discord.ExecuteAndWait(async () =>
             {
-                await discord.Connect("MjQ2MDczNjU2OTI3NTg0MjU3.CwVnow.JwhynKqFtte5sxfx2beuL4uod4k", TokenType.Bot);
+                await discord.Connect("Hidden Due to Recent Events", TokenType.Bot);
             });
         }
 
