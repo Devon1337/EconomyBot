@@ -25,7 +25,7 @@
 - Add CSV file or something relative to do bank storage
 - turn int32 into int64 or int long
 - remove the dictionary instead for file name.
-- maybe not confirmed maybe setup all the data to online and link the usernames to a Unique ID
+- maybe not confirmed maybe setup all the data to online and link the usernames to a Unique ID (SQL)
 
 # Update Notice
 ## Update 1.1a (Windows Form)
