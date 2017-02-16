@@ -11,6 +11,12 @@ namespace EconomyBot
     {
         Dictionary<String, int> userEcon = new Dictionary<String, int>();
         
+        /*
+            File Writer
+            Exe/Jar Start
+            File Creation/Appendations
+        */
+        
         // Adding User Information Gathering
         // Creates an Dictionary or HashMap Of Information going about either their name or what they like to do
         // Laters gather information to check up users choice and things/games in play
