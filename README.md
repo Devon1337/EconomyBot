@@ -24,6 +24,8 @@
 - ~~Add extensibility to the bot~~
 - turn int32 into int64 or int long
 - ~~remove the dictionary instead for file name.~~
+- Bot linking(windows class as a public varible)
+- basic name gathering
 
 # Update Notice
 ## Update 1.1a (Windows Form)
