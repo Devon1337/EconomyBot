@@ -6,12 +6,13 @@
 
 - Discord Bot
 - Uses C#
+- [Soon] Allows for uses of other game languages such as java with you know what.
 - Really Basic for the Eco
 
 ## System on how Eco works
 
 - Grabs name
-- Checks Name (Offical Discord ID)
+- Checks Name (Offical Discord STRING id)
 - Opens a spot with a starting value
 - Just a HashMap
 
@@ -19,17 +20,19 @@
 
 - ~~Finish the base model~~
 - ~~Setup Windows Form application~~ (Coming 1.1a)
-- Store All the bot data to a file
-- Add extensibility to the bot
-- Add cross os support
-- Add CSV file or something relative to do bank storage
+- ~~Store All the bot data to a file~~
+- ~~Add extensibility to the bot~~
 - turn int32 into int64 or int long
-- remove the dictionary instead for file name.
-- maybe not confirmed maybe setup all the data to online and link the usernames to a Unique ID (SQL)
+- ~~remove the dictionary instead for file name.~~
 
 # Update Notice
 ## Update 1.1a (Windows Form)
 - Added a window that will startup with the application
+
+## Update 1.5 (yes a big leap)
+- Added mutliple class relating to shared public data amongst multiple languages to allow linking discord with the games chat (write in ASCII)
+- added extensibility with public libraries pertaining to the bot
+- added file logging (can disable) but still kept dictionary as a cache
 
 #Bugs
 - ~~Will not shutdown with regular methods~~ (Fixed in update 1.1 b)
