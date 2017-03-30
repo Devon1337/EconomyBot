@@ -36,8 +36,8 @@
 - added extensibility with public libraries pertaining to the bot
 - added file logging (can disable) but still kept dictionary as a cache
 
-#Bugs
+# Bugs
 - ~~Will not shutdown with regular methods~~ (Fixed in update 1.1 b)
 
-#Current Status of the Program
+# Current Status of the Program
 [![Build Status] (https://travis-ci.org/Devon1337/EconomyBot.svg?branch=master "Linux Build")](https://travis-ci.org/Devon1337/EconomyBot/builds/)
