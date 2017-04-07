@@ -5,7 +5,17 @@ package com.devon.EcoBot;
 
 // Add imports here
 
-public class EcoBot extends JavaPlugin {
+public class EcoBot extends JavaPlugin 
+
+  @Override
+  public void onEnable() {
+  
+  }
+  
+  @Override
+  public void onDisable() {
+    
+  }
 
 
 
