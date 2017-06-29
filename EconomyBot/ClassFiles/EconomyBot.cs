@@ -77,7 +77,7 @@ namespace EconomyBot
                         Amount = userEcon[e.User.Name.ToLower()] -= Int32.Parse(e.GetArg("Amount"));
                         userEcon.Remove(e.User.Name.ToLower());
                         userEcon.Add(e.User.Name.ToLower(), Amount);
-                        await e.Channel.SendMessage("User " + e.User.Name + " Has bet " + e.GetArg("Amount") + " Virginities on the number " + e.GetArg("onWho"));
+                        await e.Channel.SendMessage("User " + e.User.Name + " Has bet " + e.GetArg("Amount") + " x on the number " + e.GetArg("onWho"));
                         int randomNumber = random.Next(1, 7);
 
 
@@ -128,7 +128,7 @@ namespace EconomyBot
                    else
                    {
                        Allowed = false;
-                       await e.Channel.SendMessage("User: " + e.User.Name + " does not have enough virginities to pay " + e.GetArg("TargetUser") + " " + e.GetArg("Amount") + " Virginities");
+                       await e.Channel.SendMessage("User: " + e.User.Name + " does not have enough x to pay " + e.GetArg("TargetUser") + " " + e.GetArg("Amount") + " Virginities");
                    }
 
                    while (Allowed == true)
@@ -160,7 +160,7 @@ namespace EconomyBot
             commands.CreateCommand("truth")
                 .Do(async (e) =>
                 {
-                    await e.Channel.SendMessage("Jack's a retard");
+                    
 
                 });
 
@@ -176,7 +176,7 @@ namespace EconomyBot
                        }
 
                        Amount = userEcon[e.User.Name.ToLower()] += 1500;
-                       await e.Channel.SendMessage(e.User.Name + " has just got da mfin welfare check of 1500 virginities");
+                       await e.Channel.SendMessage(e.User.Name + " has just got da mfin welfare check of 1500 x");
 
                        Taken = true;
 
@@ -219,11 +219,11 @@ namespace EconomyBot
 
                     if (e.GetArg("User").Equals(" ") || e.GetArg("User").Equals(""))
                     {
-                        await e.Channel.SendMessage(e.User.Name + " You have " + userEcon[e.User.Name.ToLower()] + " Virginities");
+                        await e.Channel.SendMessage(e.User.Name + " You have " + userEcon[e.User.Name.ToLower()] + " x");
                     }
                     else
                     {
-                        await e.Channel.SendMessage(e.GetArg("User") + " Has " + userEcon[e.GetArg("User").ToLower()] + " Virginities");
+                        await e.Channel.SendMessage(e.GetArg("User") + " Has " + userEcon[e.GetArg("User").ToLower()] + " x");
                     }
 
                 });
