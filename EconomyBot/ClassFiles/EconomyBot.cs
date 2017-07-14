@@ -19,23 +19,34 @@ namespace EconomyBot
         
         // Adding User Information Gathering
         // Creates an Dictionary or HashMap Of Information going about either their name or what they like to do
-        // Laters gather information to check up users choice and things/games in play
-      
-        /* Test Script Area (Problem is based around the ID being SnowFlake Encrpyt)
-        Go around(Get initial User Info by having the user startup the bot)
+        // Laters gather information to check up users choice and things/games in play      
         
+        /*
         Have Secondary Bot or Script Run without use of ! or @ as a logger
+        ** Identifing User **
+        1 = ID
+        2 = Identified Name
         
+        
+        Dictionary<String, String> AssignedNames = new Dictionary<String, String>();
+        Dictionary<String, String> UsersToNames = new Dictionary<String, String>();
         .createCommand("Hello")
+        .Parameter(OPTIONAL, Name)
+        .Do(async (e) => {
+        AssignedNames.put(e.User.Name, Name)
+        .createSubCommand("What") 
         .Do(async (e) => { 
-         Dictionary<String, String> e.User.Name = new Dictionary<String, String>();
+         UsersToNames.put(e.User.Name, Name)
+         });
         });      
         Overview Idea:
         
         Gunther#4534: Hey devon
         Devon1337#2016: What?
         
-       Devon1337;
+       Devon1337=Devon;
+       
+       
         
         
         */
