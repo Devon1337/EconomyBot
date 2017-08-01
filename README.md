@@ -26,10 +26,13 @@
 - ~~remove the dictionary instead for file name.~~
 - Bot linking(windows class as a public varible)
 - basic name gathering
+- web backup and globalization for eco
+- tax % and Role Change
 
 # Update Notice
-## Update 1.1a (Windows Form)
-- Added a window that will startup with the application
+## Voided
+## ~~Update 1.1a (Windows Form)
+- ~~Added a window that will startup with the application
 
 ## Update 1.5 (yes a big leap)
 - Added mutliple class relating to shared public data amongst multiple languages to allow linking discord with the games chat (write in ASCII)
@@ -38,6 +41,8 @@
 
 # Bugs
 - ~~Will not shutdown with regular methods~~ (Fixed in update 1.1 b)
+- Int Max being hit
+- File Transfer not being accepted
 
 # Current Status of the Program
 [![Build Status] (https://travis-ci.org/Devon1337/EconomyBot.svg?branch=master "Linux Build")](https://travis-ci.org/Devon1337/EconomyBot/builds/)
