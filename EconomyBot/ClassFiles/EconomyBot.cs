@@ -9,59 +9,37 @@ namespace EconomyBot
 {
     class MyBot
     {
+         // Program Defaults
+        string DefaultRoot = "C:\Users\Public\Documents\EconBot";
+        
+        // Setting up User Configuration
         Dictionary<String, int> userEcon = new Dictionary<String, int>();
+        Dictionary<String, int> UserPerms = new Dictionary<String, int>();
+        ArrayList UserList = new ArrayList();
+        ArrayList BannedList = new ArrayList();
+        ArrayList MuteList = new ArrayList();
+        string UserConfigurationPath = @DefaultRoot + "\UserConfiguration.txt";
+        string[] UserEconList = new string[250];
+        int IndexLoc = 0;
+    
+        // Bot Configurations
+        string UserConfigurationPath = @DefaultRoot + "\BotConfiguration.txt";
+        String PrivateKey;
+        int Status;
+        int Error;
         
-        /*
-            File Writer
-            Exe/Jar Start
-            File Creation/Appendations
-        */
-        
-        // Adding User Information Gathering
-        // Creates an Dictionary or HashMap Of Information going about either their name or what they like to do
-        // Laters gather information to check up users choice and things/games in play      
-        
-        /*
-        Have Secondary Bot or Script Run without use of ! or @ as a logger
-        ** Identifing User **
-        1 = ID
-        2 = Identified Name
-        
-        
-        Dictionary<String, String> AssignedNames = new Dictionary<String, String>();
-        Dictionary<String, String> UsersToNames = new Dictionary<String, String>();
-        .createCommand("Hello")
-        .Parameter(OPTIONAL, Name)
-        .Do(async (e) => {
-        AssignedNames.put(e.User.Name, Name)
-        .createSubCommand("What") 
-        .Do(async (e) => { 
-         UsersToNames.put(e.User.Name, Name)
-         });
-        });      
-        Overview Idea:
-        
-        Gunther#4534: Hey devon
-        Devon1337#2016: What?
-        
-       Devon1337=Devon;
-       
-       
-        
-        
-        */
+        // Server Configuration
+        string UserConfigurationPath = @DefaultRoot + "\ServerConfiguration.txt";
+        String[] PermissionNode = new String[500];
+        String[] PermissionRoots = new String[500];
+        Dictionary<String, String> PermissionConnect = new Dictionary<String, String>();
 
-        public Boolean Taken = false;
-
-        String Args;
-        Random random = new Random();
-        int Amount;
-        int Amount2;
-
+        // Initialization
         DiscordClient discord;
+        
         public MyBot()
         {
-            userEcon.Add("server", 1000000);
+            
             discord = new DiscordClient(x =>
             {
                 x.LogLevel = LogSeverity.Info;
@@ -71,7 +49,7 @@ namespace EconomyBot
             discord.UsingCommands(x =>
             {
                 x.PrefixChar = '!';
-                x.AllowMentionPrefix = true;
+                x.AllowMentionPrefix = false;
 
             });
 
@@ -155,76 +133,25 @@ namespace EconomyBot
                        //Modifier(e.User.Name, e.GetArg("TargetUser"), Int32.Parse(e.GetArg("Amount")));
                        Allowed = false;
                    }
-               });
-            commands.CreateCommand("help")
-                .Do(async (e) =>
-                {
-
-                    await e.Channel.SendMessage("======HelpMenu======");
-                    await e.Channel.SendMessage("=!pay [name] {$$$$}         =");
-                    await e.Channel.SendMessage("=!bank {name}                     =");
-                    await e.Channel.SendMessage("=!eggplantme                        =");
-                    await e.Channel.SendMessage("=!truth                                    =");
-
-                });
-
-            commands.CreateCommand("truth")
-                .Do(async (e) =>
-                {
-                    
-
-                });
-
-            commands.CreateCommand("welfare")
-               .Do(async (e) =>
-               {
-                   if (Taken == false)
-                   {
-
-                       if (!(userEcon.ContainsKey(e.User.Name.ToLower())))
-                       {
-                           userEcon.Add(e.User.Name.ToLower(), 100);
-                       }
-
-                       Amount = userEcon[e.User.Name.ToLower()] += 1500;
-                       await e.Channel.SendMessage(e.User.Name + " has just got da mfin welfare check of 1500 x");
-
-                       Taken = true;
-
-                   }
-                   else if (Taken == true)
-                   {
-                       await e.Channel.SendMessage("The welfare check is not ready!");
-                   }
-               });
-
-            commands.CreateCommand("ametlodegfjtekaem239sn3ndnk32")
-                .Do(async (e) =>
-                {
-                    Taken = true;
-                    await e.Channel.SendMessage("Welfare is now added");
-
-
-                });
-
-            commands.CreateCommand("eggplantme")
-
-                .Do(async (e) =>
-                {
-                    // for (int x = 0; x < Int32.Parse("Amount"); x++) {
-                    await e.Channel.SendMessage(":eggplant:");
-                    //}
-                });
+               });   
+            commands.CreateCommand("SaveConfig")
+                .Do(async (e) => 
+                    {
+                        
+                        
+                    });
             commands.CreateCommand("bank")
                 .Parameter("User", ParameterType.Optional)
                 .Do(async (e) =>
                 {
                     if (!(userEcon.ContainsKey(e.User.Name.ToLower())))
                     {
+                        UserEconList[IndexLoc] = e.User.Name.ToLower() + "[" + 100 + "]";
                         userEcon.Add(e.User.Name.ToLower(), 100);
                     }
                     if (!(userEcon.ContainsKey(e.GetArg("User").ToLower())))
                     {
+                        UserEconList[IndexLoc] = e.GetArg("User") + "[" + 100 + "]";
                         userEcon.Add(e.GetArg("User").ToLower(), 100);
                     }
 
@@ -243,13 +170,30 @@ namespace EconomyBot
 
             discord.ExecuteAndWait(async () =>
             {
-                await discord.Connect("Hidden Due to Recent Events", TokenType.Bot);
+                await discord.Connect(PrivateKey, TokenType.Bot);
             });
         }
 
+        private void ConfigurationSetup() {   
+            using (FileStream fs = File.Create(UserConfigurationPath)) {
+                  System.IO.File.WriteAllLines(UserConfigurationPath, UserEconList);
+            }
+        }
+        public void ConfigurationWrite() {
+            
+        }
+        private void ConfigurationLoad() {
+        }
+        public void PermissionAdd() {
+        }
+        private void PermissionSetup() {
+        }
+        
+        
         private void Log(object sender, LogMessageEventArgs e)
         {
             Console.WriteLine(e.Message);
         }
+        
     }
 }
