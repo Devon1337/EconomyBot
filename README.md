@@ -46,3 +46,8 @@
 
 # Current Status of the Program
 [![Build Status] (https://travis-ci.org/Devon1337/EconomyBot.svg?branch=master "Linux Build")](https://travis-ci.org/Devon1337/EconomyBot/builds/)
+
+# Notes for later
+- Have C# invoke a java application/script to transfer messages to text,
+- Have Java Invoke C# application/script to transfer messages to text,
+
