@@ -23,19 +23,22 @@ namespace EconomyBot
         int IndexLoc = 0;
     
         // Bot Configurations
-        string UserConfigurationPath = @DefaultRoot + "\BotConfiguration.txt";
+        string BotConfigurationPath = @DefaultRoot + "\BotConfiguration.txt";
         String PrivateKey;
         int Status;
         int Error;
         
         // Server Configuration
-        string UserConfigurationPath = @DefaultRoot + "\ServerConfiguration.txt";
+        string ServerConfigurationPath = @DefaultRoot + "\ServerConfiguration.txt";
         String[] PermissionNode = new String[500];
         String[] PermissionRoots = new String[500];
-        Dictionary<String, String> PermissionConnect = new Dictionary<String, String>();
+        int PermRootIndexLoc = 0;
+        int PermNodeIndexLoc = 0;
+        Dictionary<String, String> PermissionConnect = new Dictionary<String, String>(); // (Root, Node)
 
         // Initialization
         DiscordClient discord;
+        var commands = discord.GetService<CommandService>();
         
         public MyBot()
         {
@@ -53,42 +56,7 @@ namespace EconomyBot
 
             });
 
-            var commands = discord.GetService<CommandService>();
-
-            commands.CreateCommand("bet")
-                .Parameter("Amount", ParameterType.Required)
-                .Parameter("onWho", ParameterType.Required)
-                .Do(async (e) =>
-                {
-
-                    if (Int32.Parse(e.GetArg("Amount")) < userEcon[e.User.Name])
-                    {
-                        Amount = userEcon[e.User.Name.ToLower()] -= Int32.Parse(e.GetArg("Amount"));
-                        userEcon.Remove(e.User.Name.ToLower());
-                        userEcon.Add(e.User.Name.ToLower(), Amount);
-                        await e.Channel.SendMessage("User " + e.User.Name + " Has bet " + e.GetArg("Amount") + " x on the number " + e.GetArg("onWho"));
-                        int randomNumber = random.Next(1, 7);
-
-
-
-                        if (Int32.Parse(e.GetArg("onWho")) == randomNumber)
-                        {
-                            await e.Channel.SendMessage(e.User.Name + " has won " + (Int32.Parse(e.GetArg("Amount")) * 2));
-                            Amount = userEcon[e.User.Name.ToLower()] += (Int32.Parse(e.GetArg("Amount")) * 2);
-                            userEcon.Remove(e.User.Name.ToLower());
-                            userEcon.Add(e.User.Name.ToLower(), Amount);
-                        }
-                        else
-                        {
-                            await e.Channel.SendMessage("The die has rolled a " + randomNumber + " " + e.User.Name + " Has Lost " + Int32.Parse(e.GetArg("Amount")));
-                            Amount = userEcon[e.User.Name.ToLower()] -= Int32.Parse(e.GetArg("Amount"));
-                            userEcon.Remove(e.User.Name.ToLower());
-                            userEcon.Add(e.User.Name.ToLower(), Amount);
-                        }
-
-                    }
-                });
-
+           
 
             commands.CreateCommand("pay")
                .Parameter("TargetUser", ParameterType.Required)
@@ -180,13 +148,29 @@ namespace EconomyBot
             }
         }
         public void ConfigurationWrite() {
-            
         }
         private void ConfigurationLoad() {
         }
-        public void PermissionAdd() {
+        public void PermissionAdd(String name; String root, String node) {
+            if(PermissionConnect.TryGetValue(name, UserSetPermLevel)) {
+                
+            }
         }
-        private void PermissionSetup() {
+         public void HashSet() {
+        
+            PermissionsRoots[PermRootIndexLoc] = EconBot;
+            PermRootIndexLoc++;
+            PermissionsNode[PermNodeIndexLoc] = ConfigSave;
+            PermNodeIndexLoc++;
+            PermissionsNode[PermNodeIndexLoc] = ConfigLoad;
+            PermNodeIndexLoc++;
+            PermissionsNode[PermNodeIndexLoc] = UserSetPermLevel;
+            PermNodeIndexLoc++;
+            
+            PermissionConnect.add(EconBot, ConfigSave);
+            PermissionConnect.add(EconBot, ConfigLoad);
+            PermissionConnect.add(EconBot, UserSetPermLevel);
+            
         }
         
         
