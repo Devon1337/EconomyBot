@@ -34,8 +34,19 @@ namespace EconomyBot
         String[] PermissionRoots = new String[500];
         int PermRootIndexLoc = 0;
         int PermNodeIndexLoc = 0;
+        /*
+        * (BanUser)<---(EconBot)--->(SetPerms)
+        */
         Dictionary<String, String> PermissionConnect = new Dictionary<String, String>(); // (Root, Node)
-        String[][] UserPerms = new String[250][3]; // [Name][Root][Node]
+        /*
+        * Permission System Examples
+        * Root takes in SetPerm, SetRank, BanUser
+        * UserPerms(Root, SetPerms)
+        * UserPerms(Root, SetRank)
+        * UserPerms(Root, BanUser)
+        */
+        Dictionary<String, String> UserPerms = new Dictionary<String, String>(); // (User, Node)
+        Dictionary<String, String> RankPerms = new Dictionary<String, String>(); // (Rank, Node)
 
         // Initialization
         DiscordClient discord;
