@@ -35,6 +35,7 @@ namespace EconomyBot
         int PermRootIndexLoc = 0;
         int PermNodeIndexLoc = 0;
         Dictionary<String, String> PermissionConnect = new Dictionary<String, String>(); // (Root, Node)
+        String[][] UserPerms = new String[250][3]; // [Name][Root][Node]
 
         // Initialization
         DiscordClient discord;
@@ -153,7 +154,7 @@ namespace EconomyBot
         }
         public void PermissionAdd(String name; String root, String node) {
             if(PermissionConnect.TryGetValue(name, UserSetPermLevel)) {
-                
+                UserPermission
             }
         }
          public void HashSet() {
