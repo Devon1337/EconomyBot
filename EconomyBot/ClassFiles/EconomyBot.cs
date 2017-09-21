@@ -185,6 +185,10 @@ namespace EconomyBot
             
         }
         
+        public void OutBoxLogging() {
+            Logging log = new Logging();
+        }
+        
         
         private void Log(object sender, LogMessageEventArgs e)
         {
