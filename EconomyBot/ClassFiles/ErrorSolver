@@ -1,0 +1,15 @@
+using System;
+
+namespace EconomyBot {
+
+public ErrorSolver {
+    public String errorLister(int ErrorNumber) {
+        Switch(ErrorNumber) {
+        case 0:
+        
+        
+        }
+    
+    }
+}
+}
