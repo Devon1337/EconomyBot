@@ -185,7 +185,7 @@ namespace EconomyBot
             
         }
         
-        public void OutBoxLogging() {
+        public void Async<int> OutBoxLogging() {
             Logging log = new Logging();
         }
         
