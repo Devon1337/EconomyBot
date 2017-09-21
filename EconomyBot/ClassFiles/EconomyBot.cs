@@ -154,6 +154,7 @@ namespace EconomyBot
             });
         }
 
+			// Configuration Setup,Loading,Writing
         private void ConfigurationSetup() {   
             using (FileStream fs = File.Create(UserConfigurationPath)) {
                   System.IO.File.WriteAllLines(UserConfigurationPath, UserEconList);
@@ -168,6 +169,7 @@ namespace EconomyBot
                 UserPermission
             }
         }
+			// Ini all predeclared varibles
          public void HashSet() {
         
             PermissionsRoots[PermRootIndexLoc] = EconBot;
@@ -184,11 +186,15 @@ namespace EconomyBot
             PermissionConnect.add(EconBot, UserSetPermLevel);
             
         }
-        
+        // User IP Logging
         public void Async<int> OutBoxLogging() {
             Logging log = new Logging();
         }
-        
+			
+			// ChatLoading
+			public void Async<int> MultiLoading() {
+
+			}
         
         private void Log(object sender, LogMessageEventArgs e)
         {
