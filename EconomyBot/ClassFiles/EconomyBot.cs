@@ -11,6 +11,8 @@ namespace EconomyBot
     {
          // Program Defaults
         string DefaultRoot = "C:/Users/Public/Documents/EconBot";
+			string Author = "Devon";
+			string Version = "Nothing Here";
         
         // Setting up User Configuration
         Dictionary<String, int> userEcon = new Dictionary<String, int>();
@@ -34,9 +36,6 @@ namespace EconomyBot
         String[] PermissionRoots = new String[500];
         int PermRootIndexLoc = 0;
         int PermNodeIndexLoc = 0;
-        /*
-        * (BanUser)<---(EconBot)--->(SetPerms)
-        */
         Dictionary<String, String> PermissionConnect = new Dictionary<String, String>(); // (Root, Node)
         /*
         * Permission System Examples
@@ -54,13 +53,12 @@ namespace EconomyBot
         
         public MyBot()
         {
-            
+            // Setting Default Information for API
             discord = new DiscordClient(x =>
             {
                 x.LogLevel = LogSeverity.Info;
                 x.LogHandler = Log;
             });
-
             discord.UsingCommands(x =>
             {
                 x.PrefixChar = '!';
@@ -69,7 +67,7 @@ namespace EconomyBot
             });
 
            
-
+				// Base Commands
             commands.CreateCommand("pay")
                .Parameter("TargetUser", ParameterType.Required)
                .Parameter("Amount", ParameterType.Required)
