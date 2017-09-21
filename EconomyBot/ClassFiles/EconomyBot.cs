@@ -10,26 +10,26 @@ namespace EconomyBot
     class MyBot
     {
          // Program Defaults
-        string DefaultRoot = "C:\Users\Public\Documents\EconBot";
+        string DefaultRoot = "C:/Users/Public/Documents/EconBot";
         
         // Setting up User Configuration
         Dictionary<String, int> userEcon = new Dictionary<String, int>();
-        Dictionary<String, int> UserPerms = new Dictionary<String, int>();
+        Dictionary<String, String> UserPerms = new Dictionary<String, String>();
         ArrayList UserList = new ArrayList();
         ArrayList BannedList = new ArrayList();
         ArrayList MuteList = new ArrayList();
-        string UserConfigurationPath = @DefaultRoot + "\UserConfiguration.txt";
+        string UserConfigurationPath = @DefaultRoot + "/UserConfiguration.txt";
         string[] UserEconList = new string[250];
         int IndexLoc = 0;
     
         // Bot Configurations
-        string BotConfigurationPath = @DefaultRoot + "\BotConfiguration.txt";
+        string BotConfigurationPath = @DefaultRoot + "/BotConfiguration.txt";
         String PrivateKey;
         int Status;
         int Error;
         
         // Server Configuration
-        string ServerConfigurationPath = @DefaultRoot + "\ServerConfiguration.txt";
+        string ServerConfigurationPath = @DefaultRoot + "/ServerConfiguration.txt";
         String[] PermissionNode = new String[500];
         String[] PermissionRoots = new String[500];
         int PermRootIndexLoc = 0;
