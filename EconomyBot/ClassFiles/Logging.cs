@@ -2,6 +2,8 @@ using System.*;
 
 namespace EconomyBot {
 
+    // Use Awaiting for all tasks
+    
     public Logging {
          public int OutputFile() {
          
