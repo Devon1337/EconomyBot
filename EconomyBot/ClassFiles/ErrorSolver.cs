@@ -21,6 +21,8 @@ public ErrorSolver {
 				return "Unknown, Unable to right file";
 				break;
 			case 5:
+				return "Array Out of Bounds E!"
+			case 6:
 				return "Unknown Error has occurred";
 				break;
 			default:
