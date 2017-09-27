@@ -1,4 +1,4 @@
-##### Note: this is just the start of a project.  There is not a program ready for release.  All the code is basically 1.0 
+##### Note: this is just the start of a project.  There is not a program ready for release.  THIS IS ALL CRUDE CODE
 
 ## I do not recommend downloading due to its inability to start fully yet.  Most of the starting code is compiled differently.  I will have a download link when it is ready. 
 
@@ -25,8 +25,8 @@
 - turn int32 into int64 or int long
 - ~~remove the dictionary instead for file name.~~
 - Bot linking(windows class as a public varible)
-- basic name gathering
-- web backup and globalization for eco
+- ~~basic name gathering~~
+- web backup for eco
 - tax % and Role Change
 
 # Update Notice
@@ -42,7 +42,7 @@
 # Bugs
 - ~~Will not shutdown with regular methods~~ (Fixed in update 1.1 b)
 - Int Max being hit
-- File Transfer not being accepted
+- ~~File Transfer not being accepted~~
 
 # Current Status of the Program
 [![Build Status] (https://travis-ci.org/Devon1337/EconomyBot.svg?branch=master "Linux Build")](https://travis-ci.org/Devon1337/EconomyBot/builds/)
