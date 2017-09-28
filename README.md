@@ -28,12 +28,20 @@
 - ~~basic name gathering~~
 - web backup for eco
 - tax % and Role Change
+- Twitch Linking
+- Twitch Chat Linking
+- Donation, Follow, Sub, etc event handlers,
+- Bankruptcy
+- Turn github code to real code
+- Ability to Add commands
+- Stock Based Economy
+- remove herobrine 
 
 # Update Notice
 ## Voided
-## ~~Update 1.1a (Windows Form)
-- ~~Added a window that will startup with the application
-
+## ~~Update 1.1a (Windows Form)~~
+- ~~Added a window that will startup with the application~~
+## Active
 ## Update 1.5 (yes a big leap)
 - Added mutliple class relating to shared public data amongst multiple languages to allow linking discord with the games chat (write in ASCII)
 - added extensibility with public libraries pertaining to the bot
