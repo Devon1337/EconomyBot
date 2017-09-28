@@ -150,10 +150,9 @@ namespace EconomyBot
         }
         public void PermissionAdd(String name; String root, String node) {
             if(PermissionConnect.TryGetValue(name, UserSetPermLevel)) {
-                UserPermission
             }
         }
-			// Ini all predeclared varibles
+	// Initializes all the required HashMap Values
          public void HashSet() {
         
             PermissionsRoots[PermRootIndexLoc] = EconBot;
