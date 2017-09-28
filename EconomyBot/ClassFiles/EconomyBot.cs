@@ -79,17 +79,16 @@ namespace EconomyBot
 		       // Checking if such bank account is existant or if said user has permissions
                    if (userEcon.ContainsKey(Args) && !(BannedList.contains(Args)) && !(BannedList.contains(e.User.Name)) && RankPerms.contains(Args, pay) || UserPerms.contains(Args, pay) && RankPerms.contains(e.User.Name, pay,) || UserPerms.contains(e.User.Name, pay))
                    {
+			   // Same base system since if it works dont change it
                        Amount = userEcon[e.User.Name.ToLower()] -= Int32.Parse(e.GetArg("Amount"));
                        Amount2 = userEcon[Args.ToLower()] += Int32.Parse(e.GetArg("Amount"));
                        userEcon.Remove(Args.ToLower());
                        userEcon.Remove(e.User.Name.ToLower());
                        userEcon.Add(e.User.Name.ToLower(), Amount);
                        userEcon.Add(Args.ToLower(), Amount2);
-
-                       await e.Channel.SendMessage("[Test 7]" + e.User.Name + " has paid " + Args + " " + e.GetArg("Amount") + " Virginities");
-                       //Modifier(e.User.Name, e.GetArg("TargetUser"), Int32.Parse(e.GetArg("Amount")));
-                       Allowed = false;
-                   }   else if (userEcon.ContainsKey(Args)) {
+                       await e.Channel.SendMessage(e.User.Name + " has paid " + Args + " " + e.GetArg("Amount") + EconomyName);
+               
+		   }   else if (userEcon.ContainsKey(Args)) {
 			await e.Channel.SendMessage("Fixed!");		   
 		   } else if (BannedList.contains(Args)) {
 			await e.Channel.SendMessage(Args + " Is currently banned!");
