@@ -23,6 +23,7 @@ namespace EconomyBot
         string UserConfigurationPath = @DefaultRoot + "/UserConfiguration.txt";
         string[] UserEconList = new string[250];
         int IndexLoc = 0;
+	string EconomyName;
     
         // Bot Configurations
         string BotConfigurationPath = @DefaultRoot + "/BotConfiguration.txt";
@@ -73,32 +74,10 @@ namespace EconomyBot
                .Parameter("Amount", ParameterType.Required)
                .Do(async (e) =>
                {
-                   Boolean Allowed = false;
                    Args = e.GetArg("TargetUser");
-
-                   if (userEcon.ContainsKey(Args))
-                   {
-
-                   }
-                   else
-                   {
-                       userEcon.Add(Args, 100);
-                   }
-                   if (!userEcon.ContainsKey(e.User.Name.ToLower()))
-                   {
-                       userEcon.Add(e.User.Name, 100);
-                   }
-                   if (userEcon[e.User.Name.ToLower()] > Int32.Parse(e.GetArg("Amount")))
-                   {
-                       Allowed = true;
-                   }
-                   else
-                   {
-                       Allowed = false;
-                       await e.Channel.SendMessage("User: " + e.User.Name + " does not have enough x to pay " + e.GetArg("TargetUser") + " " + e.GetArg("Amount") + " Virginities");
-                   }
-
-                   while (Allowed == true)
+		       
+		       // Checking if such bank account is existant or if said user has permissions
+                   if (userEcon.ContainsKey(Args) && !(BannedList.contains(Args)) && !(BannedList.contains(e.User.Name)) && RankPerms.contains(Args, pay) || UserPerms.contains(Args, pay) && RankPerms.contains(e.User.Name, pay,) || UserPerms.contains(e.User.Name, pay))
                    {
                        Amount = userEcon[e.User.Name.ToLower()] -= Int32.Parse(e.GetArg("Amount"));
                        Amount2 = userEcon[Args.ToLower()] += Int32.Parse(e.GetArg("Amount"));
@@ -107,10 +86,18 @@ namespace EconomyBot
                        userEcon.Add(e.User.Name.ToLower(), Amount);
                        userEcon.Add(Args.ToLower(), Amount2);
 
-                       await e.Channel.SendMessage("[Test 7]" + e.User.Name + " has paid " + e.GetArg("TargetUser") + " " + e.GetArg("Amount") + " Virginities");
+                       await e.Channel.SendMessage("[Test 7]" + e.User.Name + " has paid " + Args + " " + e.GetArg("Amount") + " Virginities");
                        //Modifier(e.User.Name, e.GetArg("TargetUser"), Int32.Parse(e.GetArg("Amount")));
                        Allowed = false;
-                   }
+                   }   else if (userEcon.ContainsKey(Args)) {
+			await e.Channel.SendMessage("Fixed!");		   
+		   } else if (BannedList.contains(Args)) {
+			await e.Channel.SendMessage(Args + " Is currently banned!");
+		   } else if (Bannlist.contains(e.User.Name)) {
+			await e.Channel.SendMessage(e.User.Name + " Is currently banned!")   
+		   } else {
+			await e.Channel.SendMessage("Permission Error, Check with Administrator if you think this is incorrect!")   
+		   }
                });   
             commands.CreateCommand("SaveConfig")
                 .Do(async (e) => 
