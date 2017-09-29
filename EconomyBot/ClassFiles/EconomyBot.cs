@@ -169,6 +169,15 @@ namespace EconomyBot
             PermissionConnect.add(EconBot, UserSetPermLevel);
             
         }
+	    
+	    public void PermissionAdd(string root, string node, int baseNodeLevel) {
+		    if(baseNodeLevel == null) {
+		    	PermissionsRoots[PermRootIndexLoc] = root;
+			PermRootIndexLoc++;
+			PermissionsNode[PermNodeIndexLoc] = node;
+			PermNodeIndexLoc++;
+		    } 
+	    }
         // User IP Logging
         public void Async<int> OutBoxLogging() {
             Logging log = new Logging();
