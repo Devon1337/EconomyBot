@@ -1,3 +1,12 @@
+/*
+Most of this is crude code and will not work.  I know this because Discord.Net has implemented Webhooking which is a feature required 
+to host a bot service.
+
+This was set for older versions of the Discord.NET API
+
+I still edit it for the older version to make the code look better and more presentable without it being a bunch of sendMessage(String");
+*/
+
 using Discord;
 using Discord.Commands;
 
@@ -11,8 +20,8 @@ namespace EconomyBot
     {
          // Program Defaults
         string DefaultRoot = "C:/Users/Public/Documents/EconBot";
-			string Author = "Devon";
-			string Version = "Nothing Here";
+	string Author = "Devon";
+	string Version = "0.3";
         
         // Setting up User Configuration
         Dictionary<String, int> userEcon = new Dictionary<String, int>();
@@ -178,7 +187,7 @@ namespace EconomyBot
 			PermNodeIndexLoc++;
 		    } 
 	    }
-        // User IP Logging
+        // User Logging
         public void Async<int> OutBoxLogging() {
             Logging log = new Logging();
         }
