@@ -7,9 +7,15 @@ using System.Threading;
 
 namespace EconomyBot {
 
-  public EconBotServer {
-  
-  
+  public EconomyBotServer {
+    
+    public static void Startup(){
+
+    }
+    
+    public static void ProcessCommands() {
+      
+    }
   
   }
 
