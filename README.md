@@ -1,3 +1,5 @@
+# NO LONGER VALID DUE TO DISCORD.NET WEBHOOK UPDATE
+
 ##### Note: this is just the start of a project.  There is not a program ready for release.  THIS IS ALL CRUDE CODE
 
 ## Under Full reconstruction
